@@ -3,7 +3,7 @@ var App = () => (
     <nav className="navbar">
       <div className="col-md-6 offset-md-3">
         <div><h5><em>search</em> view goes here</h5></div>
-      </div>
+      </div>n
     </nav>
     <div className="row">
       <div className="col-md-7">
