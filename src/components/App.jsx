@@ -20,7 +20,15 @@ class App extends React.Component {
     this.setState({
       playVideo: video
     });
-    console.log('clicked');
+    // console.log('clicked');
+  }
+
+  componentDidMount() {
+
+  }
+
+  initializeData(data) {
+    //Set State Correctly
   }
 
   render() {
