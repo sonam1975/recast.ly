@@ -4,6 +4,8 @@ import Search from './Search.js';
 import VideoPlayer from './VideoPlayer.js';
 import VideoList from './VideoList.js';
 import exampleVideoData from '../data/exampleVideoData.js';
+import searchYouTube from '../lib/searchYouTube.js';
+import YOUTUBE_API_KEY from '../config/youtube.js';
 
 
 class App extends React.Component {
@@ -11,9 +13,17 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      videos: exampleVideoData.slice(),
-      playVideo: exampleVideoData[0]
-    }
+      // videos: exampleVideoData.slice(),
+      // playVideo: exampleVideoData[0]
+      videos: [],
+      playVideo: {
+        id: {},
+        snippet: {}
+
+      },
+      search: {key: YOUTUBE_API_KEY, query: 'react.js', max: 5}
+
+    };
   }
 
   selectVideo(video) {
@@ -24,11 +34,20 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    //ask for the information from the youtube and
+    searchYouTube(this.state.search, this.initializeData.bind(this));
+    //callback to save information
+
 
   }
 
   initializeData(data) {
     //Set State Correctly
+    this.setState({
+      videos: data,
+      playVideo: data[0]
+    });
+
   }
 
   render() {
