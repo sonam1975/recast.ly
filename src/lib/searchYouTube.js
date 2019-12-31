@@ -22,15 +22,3 @@ var searchYouTube = (options, callback) => {
 
 export default searchYouTube;
 
-/*
-destination
-https://www.googleapis.com/youtube/v3/search
-forContentOwner false
-forDeveloper true
-forMine false
-relatedToVideoID ''
-
-
-
-
-*/
