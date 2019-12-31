@@ -1,3 +1,6 @@
+//Import Elements
+//Add Elements to correct place
+
 var App = () => (
   <div>
     <nav className="navbar">
