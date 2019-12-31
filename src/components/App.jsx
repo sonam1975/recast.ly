@@ -33,14 +33,14 @@ class App extends React.Component {
         </nav>
         <div className="row">
           <div className="col-md-7">
-            <div><h5><em>videoPlayer</em> <VideoPlayer playVideo={this.state.playVideo} /></h5></div>
+            <div><h5><em>videoPlayer</em> <VideoPlayer video={this.state.playVideo} /></h5></div>
           </div>
           <div className="col-md-5">
             <div><h5><em>videoList</em> <VideoList click={this.selectVideo.bind(this)} videos={this.state.videos} /></h5></div>
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
