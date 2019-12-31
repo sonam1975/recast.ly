@@ -7,7 +7,7 @@ import VideoListEntry from './VideoListEntry.js';
 // import exampleVideoData from './data/exampleVideoData.js';
 var VideoList = (props) =>  (
   <div className="video-list">
-    {props.videos.map((video)=><VideoListEntry video={video} /> ) }
+    {props.videos.map((video)=><VideoListEntry click={props.click} video={video} /> ) }
     {/* // <div><h5><em>videoListEntry</em> <VideoListEntry video={props.videos[0]}/></h5></div>
     // <div><h5><em>videoListEntry</em> <VideoListEntry video={props.videos[1]}/></h5></div>
     // <div><h5><em>videoListEntry</em> <VideoListEntry video={props.videos[2]}/></h5></div>
