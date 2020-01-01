@@ -8,7 +8,7 @@ var searchYouTube = (options, callback) => {
       key: options.key || YOUTUBE_API_KEY,
       q: options.query,
       part: 'snippet',
-      maxResults: options.max || 5,
+      maxResults: options.max || 3,
       type: 'video',
     },
     success: (data) => callback.call(null, data.items) || function (data) {

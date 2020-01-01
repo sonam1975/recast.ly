@@ -21,7 +21,7 @@ class App extends React.Component {
         snippet: {}
 
       },
-      search: {key: YOUTUBE_API_KEY, query: 'react.js', max: 5}
+      search: {key: YOUTUBE_API_KEY, query: 'vue', max: 5}
 
     };
   }
@@ -41,6 +41,15 @@ class App extends React.Component {
 
   }
 
+  searchHandler(event) {
+    console.log('searching');
+    console.log(event.target.value);
+    this.setState({
+      search: {key: YOUTUBE_API_KEY, query: event.target.value, max: 5}
+    });
+    searchYouTube(this.state.search, this.initializeData.bind(this));
+  }
+
   initializeData(data) {
     //Set State Correctly
     this.setState({
@@ -55,12 +64,12 @@ class App extends React.Component {
       <div>
         <nav className="navbar">
           <div className="col-md-6 offset-md-3">
-            <div><h5><em>search</em><Search /></h5></div>
+            <div><h5><em>search</em><Search search={this.searchHandler.bind(this)}/></h5></div>
           </div>
         </nav>
         <div className="row">
           <div className="col-md-7">
-            <div><h5><em>videoPlayer</em> <VideoPlayer video={this.state.playVideo} /></h5></div>
+            <div><h5><em>videoPlayer</em> <VideoPlayer video={this.state.playVideo} value={this.state.search.query}/></h5></div>
           </div>
           <div className="col-md-5">
             <div><h5><em>videoList</em> <VideoList click={this.selectVideo.bind(this)} videos={this.state.videos} /></h5></div>
